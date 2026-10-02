@@ -493,9 +493,7 @@ flutter run
 
 > ✅ **Checkpoint 1.1** ถ่ายภาพหน้าจอ Google AI Studio ที่แสดงรูปภาพที่แนบ Prompt ที่ใช้ และผลลัพธ์ JSON ที่ได้ จากนั้นทดลองรันซ้ำอีก 2 ครั้งด้วยภาพและ Prompt เดิม
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่
-```
+![ผลลัพธ์ Prompt ใน Google AI Studio](images/aistudio/cp1_1_prompt_runs.png)
 
 ### ขั้นตอนที่ 1.2: ทดลองเปิดใช้ Structured Output ใน AI Studio
 
@@ -503,9 +501,9 @@ flutter run
 
 > ✅ **Checkpoint 1.2** ถ่ายภาพหน้าจอที่แสดงการตั้งค่า Structured Output และผลลัพธ์ที่ได้ อธิบายว่าผลลัพธ์ที่ได้ต่างจากตอนไม่เปิด Structured Output ในขั้นตอน 1.1 อย่างไร (อ้างอิงบทหนังสือเรียนหัวข้อ 7.4)
 
-![Structured Output](images/cp1_2_structured_output.png)
+![Structured Output](images/aistudio/cp1_2_structured_output.png)
 
-เมื่อไม่เปิด Structured Output โมเดลมักตอบเป็น JSON ที่ครอบด้วยบล็อกโค้ดหรือมีข้อความอื่นปนมา และรูปแบบอาจเปลี่ยนไปในแต่ละครั้งที่รัน ทำให้นำไป parse ในโค้ดแล้วพลาดได้ เมื่อเปิด Structured Output ผลลัพธ์เป็น JSON ล้วนที่มีฟิลด์ title category description ครบตาม Schema ทุกครั้ง นำไป jsonDecode ได้ทันทีโดยไม่ต้องตัดหรือทำความสะอาดข้อความก่อน
+ตอนไม่เปิด Structured Output โมเดลตอบเป็นข้อความธรรมดาที่จัดรูปแบบให้ดูเหมือน JSON ตามที่ขอไว้ใน Prompt เท่านั้น ไม่มีอะไรรับประกันว่าจะได้รูปแบบนี้ทุกครั้ง บางครั้งอาจมีบล็อกโค้ดหรือข้อความอื่นปนมา หรือชื่อฟิลด์ผิดไป ทำให้ parse ในโค้ดพลาดได้ เมื่อเปิด Structured Output และกำหนด Schema แล้ว AI Studio แสดงผลเป็นบล็อก JSON ที่มีฟิลด์ title category description ครบตาม Schema เพราะโมเดลถูกบังคับให้ตอบตามโครงสร้างนี้ตั้งแต่ระดับการสร้างคำตอบ นำไป jsonDecode ได้ทันทีโดยไม่ต้องตัดหรือทำความสะอาดข้อความก่อน
 
 ---
 
